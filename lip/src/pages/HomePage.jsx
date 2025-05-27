@@ -13,7 +13,7 @@ const HomePage = () => {
     return (
         <Layout>
             <HeroSection />
-            <AIEnabledLearning />
+            {/* <AIEnabledLearning /> */}
             <PartnerLogoSlider />
             
             <StudentPlacementSlider />
