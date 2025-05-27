@@ -3,7 +3,7 @@ import { GraduationCap, Users, Award, ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 import HeroSecionImage from "../assets/images/b-pharma-student.jpeg";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/lip-logo.png";
 
 // Button component for Vite (since we don't have shadcn/ui)
 const Button = ({
@@ -40,7 +40,7 @@ export default function PharmacyHero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <section className="relative min-h-screen py-4 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
