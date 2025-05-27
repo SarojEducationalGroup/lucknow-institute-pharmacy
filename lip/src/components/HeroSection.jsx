@@ -1,49 +1,23 @@
 
+import HeroSecionImage from "../assets/images/b-pharma-student.jpeg";
+import Logo from "../assets/images/lip-logo.png";
 
 import { Atom, FlaskConical, Pill, Microscope, GraduationCap, Sparkles, Brain, Cpu, Zap } from "lucide-react"
 import StudentImg from "../assets/images/b-pharma-student2.jpeg"
 
 export default function HeroSection() {
+  
+
   return (
-    <section className="pt-2 relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden">
-      {/* Simplified Background */}
-      <div className="absolute inset-0">
-        {/* Minimal Molecular Structure */}
-        <div className="absolute inset-0 opacity-20">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-500 rounded-full animate-pulse"
-              style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${3 + Math.random()}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Fewer Floating Pills */}
-        <div className="absolute inset-0">
-          {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-float"
-              style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${8 + Math.random() * 2}s`,
-              }}
-            >
-              <div className="w-6 h-12 bg-gradient-to-b from-red-400/30 to-white/50 rounded-full opacity-40 transform rotate-45" />
-            </div>
-          ))}
-        </div>
-
-        {/* Static Gradient Accent */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
+    <section className="relative min-h-screen py-4 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
@@ -304,5 +278,5 @@ export default function HeroSection() {
         }
       `}</style>
     </section>
-  )
-}
+  )}
+
