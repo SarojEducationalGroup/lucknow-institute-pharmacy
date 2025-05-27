@@ -1,6 +1,5 @@
 
-import HeroSecionImage from "../assets/images/b-pharma-student.jpeg";
-import Logo from "../assets/images/lip-logo.png";
+
 
 import { Atom, FlaskConical, Pill, Microscope, GraduationCap, Sparkles, Brain, Cpu, Zap } from "lucide-react"
 import StudentImg from "../assets/images/b-pharma-student2.jpeg"
