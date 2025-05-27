@@ -1,76 +1,88 @@
 import React from "react";
-import { Users, Award, BookOpen } from "lucide-react";
+import { FlaskConical, GraduationCap, HeartPulse, Library } from "lucide-react";
 import Layout from "../components/Layout";
 
 export default function AboutUs() {
   return (
-    <Layout >
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 py-16 px-6 sm:px-12 lg:px-24">
-      <div className="max-w-5xl mx-auto">
-        {/* Heading */}
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-6 text-center">
-          About Saroj College of Pharmacy
-        </h2>
-
-        {/* Intro Paragraph */}
-        <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-center">
-          Saroj College of Pharmacy is committed to excellence in pharmaceutical education, research, and community healthcare. 
-          We empower students to become leaders in the pharmacy profession by fostering innovation, integrity, and compassion.
-        </p>
-
-        {/* Content Grid */}
-        <div className="grid gap-12 lg:grid-cols-3">
-          {/* Mission */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <div className="flex items-center gap-4 mb-4 text-blue-600">
-              <Award className="w-8 h-8" />
-              <h3 className="text-xl font-semibold">Our Mission</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              To provide quality pharmacy education and cutting-edge research that advances healthcare and improves patient outcomes.
-              We strive to nurture skilled, ethical professionals ready to serve society.
-            </p>
-          </div>
-
-          {/* Vision */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <div className="flex items-center gap-4 mb-4 text-green-600">
-              <Users className="w-8 h-8" />
-              <h3 className="text-xl font-semibold">Our Vision</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              To be recognized as a premier institution in pharmaceutical sciences,
-              leading innovation in education and research to meet the evolving needs of healthcare globally.
-            </p>
-          </div>
-
-          {/* Programs */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <div className="flex items-center gap-4 mb-4 text-purple-600">
-              <BookOpen className="w-8 h-8" />
-              <h3 className="text-xl font-semibold">Our Programs</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Offering comprehensive programs including B.Pharm, M.Pharm, and specialized research initiatives, 
-              Saroj College equips students with the knowledge and skills to excel in pharmaceutical sciences.
-            </p>
-          </div>
-        </div>
-
-        {/* CTA / Contact */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto mb-6">
-            Join Saroj College of Pharmacy and be a part of shaping the future of healthcare through excellence in education and research.
+    <Layout>
+      <section className="min-h-screen bg-gradient-to-r from-indigo-50 to-purple-50 py-16 px-4 sm:px-8">
+        {/* Hero Section */}
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h1 className="text-5xl font-bold text-indigo-900 mb-6">
+            Lucknow Institute of Pharmacy
+          </h1>
+          <p className="text-xl text-indigo-700 max-w-3xl mx-auto">
+            Pioneering pharmaceutical education since 2005 with innovation, research excellence, and industry-aligned training.
           </p>
-          <a
-            href="mailto:info@sarojpharmacy.edu.in"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition"
-          >
-            Contact Us
-          </a>
         </div>
-      </div>
-    </section>
+
+        {/* Features with Icons */}
+        <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-20">
+          {[
+            { icon: <GraduationCap className="w-10 h-10" />, title: "500+ Graduates", desc: "Successful alumni network" },
+            { icon: <FlaskConical className="w-10 h-10" />, title: "15+ Labs", desc: "State-of-the-art facilities" },
+            { icon: <HeartPulse className="w-10 h-10" />, title: "100% Placement", desc: "Industry partnerships" },
+            { icon: <Library className="w-10 h-10" />, title: "10,000+ Books", desc: "Comprehensive library" }
+          ].map((item, index) => (
+            <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+              <div className="text-indigo-600 mb-4">{item.icon}</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
+              <p className="text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* About Content */}
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="md:flex">
+            <div className="md:w-1/2 bg-indigo-600 p-8 text-white">
+              <h2 className="text-3xl font-bold mb-6">Our Philosophy</h2>
+              <p className="mb-6 text-indigo-100">
+                At Lucknow Institute of Pharmacy, we believe in merging theoretical knowledge with practical application to create pharmacy professionals who can meet global healthcare challenges.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-indigo-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Industry-focused curriculum</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-indigo-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Research-driven approach</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-indigo-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Ethical practice emphasis</span>
+                </li>
+              </ul>
+            </div>
+            <div className="md:w-1/2 p-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Why Choose Us?</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-2">Expert Faculty</h3>
+                  <p className="text-gray-600">Learn from PhD holders and industry veterans with decades of experience.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-2">Modern Infrastructure</h3>
+                  <p className="text-gray-600">Air-conditioned labs, advanced instrumentation, and digital classrooms.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-indigo-700 mb-2">Industry Connect</h3>
+                  <p className="text-gray-600">Regular workshops, guest lectures, and placement opportunities with leading pharma companies.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+      </section>
     </Layout>
   );
 }

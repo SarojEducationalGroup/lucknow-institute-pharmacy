@@ -12,7 +12,7 @@ export default function VisionMissionValues() {
           <div className="text-center">
             <div className="flex justify-center items-center mb-4">
               <GraduationCap className="h-12 w-12 text-blue-600 mr-3" />
-              <h1 className="text-4xl font-bold text-gray-900">Saroj College of Pharmacy</h1>
+              <h1 className="text-4xl font-bold text-gray-900">Lucknow Institute of Pharmacy</h1>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Empowering future pharmacists through excellence in education, research, and healthcare innovation

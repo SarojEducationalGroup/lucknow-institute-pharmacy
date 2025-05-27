@@ -48,7 +48,7 @@ export default function ChairmanMessage() {
               Mr. Sunil Singh
             </h2>
             <p className="text-blue-600 font-semibold text-xl mt-2 text-center lg:text-left">
-              Chairman, Saroj College of Pharmacy
+              Chairman, Lucknow Institute of Pharmacy
             </p>
           </div>
 
