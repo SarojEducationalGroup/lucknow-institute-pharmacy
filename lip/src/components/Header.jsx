@@ -61,14 +61,17 @@ const Header = () => {
       {/* Top Contact Bar */}
       <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white text-sm">
         <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row hidden lg:flex justify-between items-center">
-          <div className="flex flex-wrap justify-center md:justify-start  gap-4 md:gap-6 mb-2 md:mb-0">
-            <a href="tel:+915222239810" className="flex items-center hover:text-blue-200 transition-colors">
+          <div className="flex flex-wrap justify-center md:justify-start  gap-2 md:gap-2 mb-2 md:mb-0">
+            <a href="tel:9555699988" className="flex items-center hover:text-blue-200 transition-colors">
               <FaPhone className="mr-2 text-blue-300" />
-              +91 5222239810
+              +91 9555699988,
             </a>
-            <a href="mailto:info@seglko.org" className="flex items-center hover:text-blue-200 transition-colors">
+            <a href="tel:9810054878" className="flex items-center hover:text-blue-200 transition-colors">
+              9810054878
+            </a>
+            <a href="mailto:admission.cell@seglko.org" className="flex items-center hover:text-blue-200 transition-colors">
               <FaEnvelope className="mr-2 text-blue-300" />
-              info@seglko.org
+              admission.cell@seglko.org
             </a>
             <div className="flex items-center">
               <FaMapMarkerAlt className="mr-2 text-blue-300" />
@@ -76,12 +79,14 @@ const Header = () => {
             </div>
           </div>
           <div className="flex space-x-4">
-            <Link 
-              to="/apply" 
+            <a 
+              href="https://siu.in8.nopaperforms.com/"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="bg-white text-blue-700 px-3 py-1 rounded-full text-xs font-bold hover:bg-blue-50 transition-colors"
             >
               Apply Now
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { Send, MapPin, Phone, Mail } from "lucide-react"
-import Layout from "../components/Layout"
+import React, { useState } from "react";
+import { Send, MapPin, Phone, Mail } from "lucide-react";
+import Layout from "../components/Layout";
 
 export default function ContactUs() {
-  const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL
+  const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -11,18 +11,18 @@ export default function ContactUs() {
     phone: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [status, setStatus] = useState("")
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus("Sending...")
+    e.preventDefault();
+    setStatus("Sending...");
 
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -32,31 +32,34 @@ export default function ContactUs() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       // Google Apps Script returns no JSON in no-cors mode, so we assume success
-      setStatus("Thank you for contacting us! We'll respond soon.")
+      setStatus("Thank you for contacting us! We'll respond soon.");
       setFormData({
         name: "",
         email: "",
         phone: "",
         subject: "",
         message: "",
-      })
+      });
     } catch (error) {
-      console.error("Error!", error.message)
-      setStatus("Something went wrong. Please try again later.")
+      console.error("Error!", error.message);
+      setStatus("Something went wrong. Please try again later.");
     }
-  }
+  };
 
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-12">
-            <h1 className="text-4xl font-extrabold text-indigo-900 mb-2">Contact Us</h1>
+            <h1 className="text-4xl font-extrabold text-indigo-900 mb-2">
+              Contact Us
+            </h1>
             <p className="text-indigo-700 max-w-xl mx-auto text-lg">
-              We are here to assist you. Please reach out with any questions or feedback.
+              We are here to assist you. Please reach out with any questions or
+              feedback.
             </p>
           </header>
 
@@ -64,18 +67,17 @@ export default function ContactUs() {
             {/* Left Info */}
             <div className="lg:col-span-5 space-y-10">
               <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
-                <h2 className="text-2xl font-semibold text-indigo-900">Contact Information</h2>
+                <h2 className="text-2xl font-semibold text-indigo-900">
+                  Contact Information
+                </h2>
 
                 <div className="flex items-start space-x-4">
                   <MapPin className="text-indigo-600 w-6 h-6 mt-1" />
                   <div>
                     <h3 className="font-semibold text-indigo-800">Address</h3>
                     <address className="not-italic text-indigo-700 leading-relaxed mt-1 text-sm">
-                      Saroj College of Pharmacy <br />
-                      Saroj Educational Campus <br />
-                      Saroj Institute Road, Sarojpuri, <br />
-                      Near Rameshwar Mandir, <br />
-                      Prayagraj, Uttar Pradesh - 211004
+                      Chand Sarai, Near Gosaiganj, Sultanpur Road , 20th KM
+                      Stone, Lucknow, Uttar Pradesh, India, 226001
                     </address>
                   </div>
                 </div>
@@ -84,7 +86,7 @@ export default function ContactUs() {
                   <Phone className="text-indigo-600 w-6 h-6" />
                   <div className="text-indigo-700">
                     <h3 className="font-semibold text-indigo-800">Phone</h3>
-                    <p className="text-sm">+91 80044 45881, +91 80044 45882</p>
+                    <p className="text-sm">+91-9555699988, 09810054878</p>
                   </div>
                 </div>
 
@@ -92,7 +94,7 @@ export default function ContactUs() {
                   <Mail className="text-indigo-600 w-6 h-6" />
                   <div className="text-indigo-700">
                     <h3 className="font-semibold text-indigo-800">Email</h3>
-                    <p className="text-sm">info@seglko.org</p>
+                    <p className="text-sm">admission.cell@seglko.org</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +102,7 @@ export default function ContactUs() {
               <div className="overflow-hidden rounded-2xl shadow-lg">
                 <iframe
                   title="Saroj College Location"
-                  src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=saroj college of pharmacy&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.160135088548!2d81.08214597521918!3d26.771164976731846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd063127323b%3A0xea2ce086f31059de!2sLucknow%20Institute%20Of%20Pharmacy!5e0!3m2!1sen!2sin!4v1748342147944!5m2!1sen!2sin"
                   width="100%"
                   height="280"
                   allowFullScreen=""
@@ -112,12 +114,20 @@ export default function ContactUs() {
 
             {/* Form */}
             <div className="lg:col-span-7 bg-white rounded-2xl shadow-lg p-10">
-              <h2 className="text-3xl font-semibold text-indigo-900 mb-6">Send us a Message</h2>
+              <h2 className="text-3xl font-semibold text-indigo-900 mb-6">
+                Send us a Message
+              </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6 max-w-3xl mx-auto"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-indigo-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-indigo-700 mb-2"
+                    >
                       Full Name
                     </label>
                     <input
@@ -132,7 +142,10 @@ export default function ContactUs() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-indigo-700 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-indigo-700 mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -149,7 +162,10 @@ export default function ContactUs() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-indigo-700 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-indigo-700 mb-2"
+                  >
                     Phone Number
                   </label>
                   <input
@@ -164,7 +180,10 @@ export default function ContactUs() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-indigo-700 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-indigo-700 mb-2"
+                  >
                     Subject
                   </label>
                   <input
@@ -179,7 +198,10 @@ export default function ContactUs() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-indigo-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-indigo-700 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -205,7 +227,9 @@ export default function ContactUs() {
                 </button>
 
                 {status && (
-                  <p className="text-center mt-4 text-indigo-700 font-medium">{status}</p>
+                  <p className="text-center mt-4 text-indigo-700 font-medium">
+                    {status}
+                  </p>
                 )}
               </form>
             </div>
@@ -213,5 +237,5 @@ export default function ContactUs() {
         </div>
       </div>
     </Layout>
-  )
+  );
 }

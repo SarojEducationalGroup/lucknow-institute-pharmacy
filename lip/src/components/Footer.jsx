@@ -43,15 +43,15 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start">
               <FaMapMarkerAlt className="mt-1 mr-3 text-blue-500" />
-              <span>123 College Road, Education City, India</span>
+              <span>Chand Sarai, Near Gosaiganj, Sultanpur Road , 20th KM Stone, Lucknow, Uttar Pradesh, India, 226001</span>
             </li>
             <li className="flex items-center">
               <FaPhone className="mr-3 text-blue-500" />
-              <a href="tel:+915222239810" className="hover:text-white">+91 5222239810</a>
+              <a href="tel:9555699988" className="hover:text-white">+91 9555699988</a>
             </li>
             <li className="flex items-center">
               <FaEnvelope className="mr-3 text-blue-500" />
-              <a href="mailto:info@seglko.org" className="hover:text-white">info@seglko.org</a>
+              <a href="mailto:admission.cell@seglko.org" className="hover:text-white">admission.cell@seglko.org</a>
             </li>
           </ul>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
       {/* Social & Copyright */}
       <div className="border-t border-gray-700 py-6">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p className="mb-4 md:mb-0 text-gray-400">&copy; {new Date().getFullYear()} Your College Name. All rights reserved.</p>
+          <p className="mb-4 md:mb-0 text-gray-400">&copy; {new Date().getFullYear()} Lucknow Institute Of Pharmacy. All rights reserved.</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white"><FaFacebookF /></a>
             <a href="#" className="hover:text-white"><FaTwitter /></a>

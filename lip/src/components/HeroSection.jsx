@@ -1,12 +1,17 @@
-
-
-
-import { Atom, FlaskConical, Pill, Microscope, GraduationCap, Sparkles, Brain, Cpu, Zap } from "lucide-react"
-import StudentImg from "../assets/images/b-pharma-student2.jpeg"
+import {
+  Atom,
+  FlaskConical,
+  Pill,
+  Microscope,
+  GraduationCap,
+  Sparkles,
+  Brain,
+  Cpu,
+  Zap,
+} from "lucide-react";
+import StudentImg from "../assets/images/b-pharma-student2.jpeg";
 
 export default function HeroSection() {
-  
-
   return (
     <section className="relative min-h-screen py-4 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Background Pattern */}
@@ -77,17 +82,25 @@ export default function HeroSection() {
 
               <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
                 Where molecular innovation meets pharmaceutical excellence.
-                <span className="text-blue-600 font-semibold"> Discover, Create, Heal.</span>
+                <span className="text-blue-600 font-semibold">
+                  {" "}
+                  Discover, Create, Heal.
+                </span>
               </p>
             </div>
 
             {/* Simplified CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
-                <span className="relative z-10 flex items-center justify-center">
+                <a
+                  href="https://siu.in8.nopaperforms.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 flex items-center justify-center"
+                >
                   <Atom className="w-5 h-5 mr-2" />
                   Start Your Journey
-                </span>
+                </a>
               </button>
 
               <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 bg-white/50 backdrop-blur-sm shadow-lg">
@@ -98,9 +111,24 @@ export default function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               {[
-                { number: "25+", label: "Years", icon: GraduationCap, color: "blue" },
-                { number: "5K+", label: "Alumni", icon: Microscope, color: "purple" },
-                { number: "95%", label: "Placement", icon: FlaskConical, color: "pink" },
+                {
+                  number: "25+",
+                  label: "Years",
+                  icon: GraduationCap,
+                  color: "blue",
+                },
+                {
+                  number: "5K+",
+                  label: "Alumni",
+                  icon: Microscope,
+                  color: "purple",
+                },
+                {
+                  number: "95%",
+                  label: "Placement",
+                  icon: FlaskConical,
+                  color: "pink",
+                },
               ].map((stat, index) => (
                 <div key={index} className="text-center group cursor-pointer">
                   <div className="relative mb-2">
@@ -108,7 +136,9 @@ export default function HeroSection() {
                       <stat.icon className="w-6 h-6 text-blue-600" />
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-blue-600">{stat.number}</div>
+                  <div className="text-2xl font-bold text-blue-600">
+                    {stat.number}
+                  </div>
                   <div className="text-gray-500 text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -159,8 +189,12 @@ export default function HeroSection() {
                       <GraduationCap className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-sm">Top Performers</div>
-                      <div className="text-xs text-gray-600">Academic Excellence</div>
+                      <div className="font-bold text-gray-900 text-sm">
+                        Top Performers
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        Academic Excellence
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -174,7 +208,9 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <div className="font-bold text-gray-900">Research Labs</div>
-                    <div className="text-xs text-gray-600">Advanced Equipment</div>
+                    <div className="text-xs text-gray-600">
+                      Advanced Equipment
+                    </div>
                   </div>
                 </div>
               </div>
@@ -188,7 +224,9 @@ export default function HeroSection() {
                     <Pill className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">Drug Discovery</div>
+                    <div className="font-bold text-gray-900">
+                      Drug Discovery
+                    </div>
                     <div className="text-xs text-gray-600">Innovation Hub</div>
                   </div>
                 </div>
@@ -210,8 +248,12 @@ export default function HeroSection() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold text-emerald-800 text-lg">AI-Powered</div>
-                    <div className="text-sm text-emerald-600">Next-Gen Learning</div>
+                    <div className="font-bold text-emerald-800 text-lg">
+                      AI-Powered
+                    </div>
+                    <div className="text-sm text-emerald-600">
+                      Next-Gen Learning
+                    </div>
                   </div>
                 </div>
 
@@ -219,17 +261,23 @@ export default function HeroSection() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 p-2 bg-white/60 rounded-lg">
                     <Cpu className="w-4 h-4 text-emerald-600" />
-                    <span className="text-sm font-medium text-gray-800">Smart Drug Design</span>
+                    <span className="text-sm font-medium text-gray-800">
+                      Smart Drug Design
+                    </span>
                   </div>
 
                   <div className="flex items-center space-x-3 p-2 bg-white/60 rounded-lg">
                     <Brain className="w-4 h-4 text-teal-600" />
-                    <span className="text-sm font-medium text-gray-800">ML-Based Research</span>
+                    <span className="text-sm font-medium text-gray-800">
+                      ML-Based Research
+                    </span>
                   </div>
 
                   <div className="flex items-center space-x-3 p-2 bg-white/60 rounded-lg">
                     <Atom className="w-4 h-4 text-purple-600" />
-                    <span className="text-sm font-medium text-gray-800">Molecular Modeling</span>
+                    <span className="text-sm font-medium text-gray-800">
+                      Molecular Modeling
+                    </span>
                   </div>
                 </div>
 
@@ -269,13 +317,18 @@ export default function HeroSection() {
       {/* Custom CSS for animations */}
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(5deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(5deg);
+          }
         }
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
       `}</style>
     </section>
-  )}
-
+  );
+}
