@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/images/lip-logo.png';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaChevronDown, FaTimes, FaBars } from 'react-icons/fa';
 
+
 const menuItems = [
   {
     title: 'Home',
@@ -40,6 +41,10 @@ const menuItems = [
   {
     title: 'Contact',
     path: '/contact',
+  },
+  {
+    title: 'Placements',
+    path: '/placements'
   }
 ];
 
