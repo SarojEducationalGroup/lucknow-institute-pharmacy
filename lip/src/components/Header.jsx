@@ -62,13 +62,11 @@ const Header = () => {
       <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white text-sm">
         <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row hidden lg:flex justify-between items-center">
           <div className="flex flex-wrap justify-center md:justify-start  gap-2 md:gap-2 mb-2 md:mb-0">
-            <a href="tel:9555699988" className="flex items-center hover:text-blue-200 transition-colors">
+            <a href="tel:9513731275" className="flex items-center hover:text-blue-200 transition-colors">
               <FaPhone className="mr-2 text-blue-300" />
-              +91 9555699988,
+              +91 9513731275
             </a>
-            <a href="tel:9810054878" className="flex items-center hover:text-blue-200 transition-colors">
-              9810054878
-            </a>
+            
             <a href="mailto:admission.cell@seglko.org" className="flex items-center hover:text-blue-200 transition-colors">
               <FaEnvelope className="mr-2 text-blue-300" />
               admission.cell@seglko.org

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Loader2 } from "lucide-react"; // use Loader2 for spinner
 import Layout from "../components/Layout";
 
 export default function ContactUs() {
   const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-
-  
 
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +14,7 @@ export default function ContactUs() {
   });
 
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,19 +23,19 @@ export default function ContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     setStatus("Sending...");
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // required for Google Apps Script to accept without CORS error
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      // Google Apps Script returns no JSON in no-cors mode, so we assume success
       setStatus("Thank you for contacting us! We'll respond soon.");
       setFormData({
         name: "",
@@ -48,6 +47,8 @@ export default function ContactUs() {
     } catch (error) {
       console.error("Error!", error.message);
       setStatus("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -88,7 +89,7 @@ export default function ContactUs() {
                   <Phone className="text-indigo-600 w-6 h-6" />
                   <div className="text-indigo-700">
                     <h3 className="font-semibold text-indigo-800">Phone</h3>
-                    <p className="text-sm">+91-9555699988, 09810054878</p>
+                    <p className="text-sm">+91-9513731275</p>
                   </div>
                 </div>
 
@@ -220,19 +221,33 @@ export default function ContactUs() {
 
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+                  disabled={loading}
+                  className={`w-full py-3 rounded-lg font-semibold transition ${
+                    loading
+                      ? "bg-indigo-300 cursor-not-allowed text-white"
+                      : "bg-indigo-600 hover:bg-indigo-700 text-white"
+                  }`}
                 >
                   <div className="flex items-center justify-center space-x-2">
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
+                    {loading ? (
+                      <>
+                        <Loader2 className="animate-spin w-5 h-5" />
+                        <span>Sending, please wait...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </div>
                 </button>
 
-                {status && (
+                {/* {status && (
                   <p className="text-center mt-4 text-indigo-700 font-medium">
                     {status}
                   </p>
-                )}
+                )} */}
               </form>
             </div>
           </div>
