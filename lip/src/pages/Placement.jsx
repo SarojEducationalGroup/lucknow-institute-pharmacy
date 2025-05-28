@@ -4,7 +4,7 @@ import { useState } from "react";
 import {
   Calendar,
   Building2,
-  DollarSign,
+  IndianRupee,
   GraduationCap,
   Users,
   TrendingUp,
@@ -201,7 +201,7 @@ function StudentCard({ student }) {
           </div>
 
           <div className="flex items-center text-gray-600">
-            <DollarSign className="h-4 w-4 mr-2" />
+            <IndianRupee className="h-4 w-4 mr-2" />
             <span className="text-sm font-semibold text-green-600">
               {student.package}
             </span>
