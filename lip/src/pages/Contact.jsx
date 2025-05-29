@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Send, MapPin, Phone, Mail, Loader2 } from "lucide-react"; // use Loader2 for spinner
 import Layout from "../components/Layout";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactUs() {
   const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
@@ -13,7 +14,6 @@ export default function ContactUs() {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -24,7 +24,6 @@ export default function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("Sending...");
 
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
@@ -36,7 +35,7 @@ export default function ContactUs() {
         body: JSON.stringify(formData),
       });
 
-      setStatus("Thank you for contacting us! We'll respond soon.");
+      toast.success("Thank you for contacting us! We'll respond soon.");
       setFormData({
         name: "",
         email: "",
@@ -46,7 +45,7 @@ export default function ContactUs() {
       });
     } catch (error) {
       console.error("Error!", error.message);
-      setStatus("Something went wrong. Please try again later.");
+      toast.error("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -54,6 +53,7 @@ export default function ContactUs() {
 
   return (
     <Layout>
+      <Toaster/>
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-12">
@@ -232,7 +232,7 @@ export default function ContactUs() {
                     {loading ? (
                       <>
                         <Loader2 className="animate-spin w-5 h-5" />
-                        <span>Sending, please wait...</span>
+                        <span>Submitting, please wait...</span>
                       </>
                     ) : (
                       <>
@@ -243,11 +243,7 @@ export default function ContactUs() {
                   </div>
                 </button>
 
-                {/* {status && (
-                  <p className="text-center mt-4 text-indigo-700 font-medium">
-                    {status}
-                  </p>
-                )} */}
+               
               </form>
             </div>
           </div>
