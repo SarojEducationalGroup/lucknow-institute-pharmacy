@@ -8,7 +8,9 @@ const Layout = ({children}) => {
     return (
         <div className='flex flex-col min-h-screen'>
             <PopupForm />
+            <div className=' hidden md:flex ' >
             <Chatbot />
+            </div>
             {/* Header  */}
             <Header/>
     
