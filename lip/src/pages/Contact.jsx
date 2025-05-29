@@ -12,6 +12,7 @@ export default function ContactUs() {
     phone: "",
     subject: "",
     message: "",
+    college: "Lucknow Institute of Pharmacy"
   });
 
   const [loading, setLoading] = useState(false);
