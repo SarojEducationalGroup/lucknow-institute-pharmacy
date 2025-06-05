@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import StudentImg from "../assets/images/b-pharma-student2.jpeg";
 
+
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen py-4 flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
@@ -103,8 +105,11 @@ export default function HeroSection() {
                 </a>
               </button>
 
+
               <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all duration-300 bg-white/50 backdrop-blur-sm shadow-lg">
-                Explore Labs
+                <a href="/courses" className="w-full h-full p-10" >
+                Explore Courses
+                </a>
               </button>
             </div>
 
