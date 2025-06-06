@@ -16,8 +16,8 @@ const menuItems = [
       { name: 'About Us', path: '/about' },
       { name: 'Chairman Message', path: '/chairman-message' },
       { name: 'Vision & Mission', path: '/vision-mission' },
-      { name: 'Infrastructure', path: '/infrastructure' },
-      { name: 'Faculty', path: '/faculty' },
+      // { name: 'Infrastructure', path: '/infrastructure' },
+      // { name: 'Faculty', path: '/faculty' },
     ]
   },
   {
@@ -25,8 +25,8 @@ const menuItems = [
     links: [
       { name: 'Admission Process', path: '/admission-process' },
       { name: 'Fee Structure', path: '/fee-structure' },
-      { name: 'Scholarships', path: '/scholarships' },
-      { name: 'International Students', path: '/international-students' },
+      // { name: 'Scholarships', path: '/scholarships' },
+      // { name: 'International Students', path: '/international-students' },
     ]
   },
   {
@@ -34,8 +34,8 @@ const menuItems = [
     links: [
       { name: 'Courses', path: '/courses' },
       { name: 'Syllabus', path: '/syllabus' },
-      { name: 'Academic Calendar', path: '/academic-calendar' },
-      { name: 'Examination', path: '/examination' },
+      // { name: 'Academic Calendar', path: '/academic-calendar' },
+      // { name: 'Examination', path: '/examination' },
     ]
   },
   {
