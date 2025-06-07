@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiSend, FiX, FiMessageSquare } from "react-icons/fi";
+import { FiSend, FiX, FiMessageSquare, FiRefreshCw } from "react-icons/fi";
 import { Loader2 } from "lucide-react";
 
 const Chatbot = () => {
@@ -10,7 +10,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm your virtual assistant for Lucknow Institute of Pharmacy.",
+      text: "Hi! I'm your virtual assistant for Saroj College of Engineering and Polytechnic",
       sender: "bot",
       time: getCurrentTime(),
       options: null,
@@ -31,6 +31,7 @@ const Chatbot = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [formData, setFormData] = useState({
+    college: "SCEP-ChatBot",
     name: "",
     email: "",
     phone: "",
@@ -57,6 +58,34 @@ const Chatbot = () => {
     if (!isOpen) {
       setShowContactForm(false);
     }
+  };
+
+  const resetChat = () => {
+    setMessages([
+      {
+        id: 1,
+        text: "Hi! I'm your virtual assistant for Saroj College of Engineering and Polytechnic",
+        sender: "bot",
+        time: getCurrentTime(),
+        options: null,
+      },
+      {
+        id: 2,
+        text: "How can I help you today?",
+        sender: "bot",
+        time: getCurrentTime(),
+        options: [
+          "Academic programs information",
+          "Admission process",
+          "Campus facilities",
+          "Placement details",
+          "Contact administration",
+        ],
+      },
+    ]);
+    setShowContactForm(false);
+    setHasFirstOptionBeenSelected(false);
+    setInputValue("");
   };
 
   const handleInputChange = (e) => setInputValue(e.target.value);
@@ -127,38 +156,60 @@ const Chatbot = () => {
 
     if (userInput.toLowerCase().includes("program")) {
       response =
-        "We offer the following pharmacy courses:\n\n• D.Pharm\n• B.Pharm\n• M.Pharm";
+        "We offer the following engineering and polytechnic courses:\n\n• B.Tech (Computer Science, Mechanical, Civil, Electrical)\n• Diploma in Engineering (Various Specializations)\n• Polytechnic courses";
       options = [
-        "D.Pharm details",
-        "B.Pharm details",
-        "M.Pharm details",
+        "B.Tech details",
+        "Diploma details",
+        "Polytechnic details",
         "Contact administration",
       ];
     } else if (userInput.toLowerCase().includes("admission")) {
-      response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application`;
+      response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application\n\nFor engineering programs, JEE Main scores are considered.`;
     } else if (userInput.toLowerCase().includes("facility")) {
       response =
-        "Our campus includes modern labs, a library, hostels, sports facilities, and more.";
+        "Our campus includes:\n- Modern labs and workshops\n- Computer centers\n- Library with digital resources\n- Hostel facilities\n- Sports complex\n- Transportation services";
       options = [
         "Lab details",
         "Library info",
         "Hostel info",
         "Sports facilities",
+        "Transportation",
         "Contact administration",
       ];
     } else if (userInput.toLowerCase().includes("placement")) {
-      response = `Recent Placement Highlights:
-- Shaloni Devi → Max Health Care → 18 LPA
-- Harsh Dixit → Eclat Health → 4 LPA
-- Mansi Sahu → Eclat Health → 3 LPA
-- Surendra Pratap → Eclat Health → 4 LPA
-- Pranjali Singh → Eclat Health → 4 LPA
-- Ajay Pratap Yadav → Max Health Care → 3 LPA
-- Piyush Pandey → Max Health Care → 3 LPA
-- Pratit Srivastava → Max Health Care → 4 LPA`;
+      response = `Our Placement Highlights:
+- Strong industry connections with tech companies
+- Regular campus recruitment drives
+- Dedicated placement cell for training and opportunities
+- Alumni network in top engineering firms
+  
+Recent recruiters include TCS, Wipro, L&T, and other leading engineering companies.`;
       options = ["Contact administration"];
+    } else if (userInput.toLowerCase().includes("b.tech")) {
+      response = `B.Tech Programs (4 years):
+- Computer Science & Engineering
+- Mechanical Engineering
+- Civil Engineering
+- Electrical Engineering
+  
+Eligibility: 10+2 with Physics, Chemistry, and Mathematics`;
+    } else if (userInput.toLowerCase().includes("diploma")) {
+      response = `Diploma in Engineering (3 years):
+- Mechanical Engineering
+- Civil Engineering
+- Electrical Engineering
+- Electronics Engineering
+  
+Eligibility: 10th pass with Science and Mathematics`;
+    } else if (userInput.toLowerCase().includes("polytechnic")) {
+      response = `Polytechnic Courses:
+- Advanced technical training programs
+- Short-term skill development courses
+- Industry-oriented curriculum
+  
+Duration: 6 months to 2 years`;
     } else {
-      response = "I'm here to assist you with any queries about our institute.";
+      response = "I'm here to assist you with any queries about our engineering and polytechnic programs.";
       options = [
         "Academic programs information",
         "Admission process",
@@ -198,6 +249,7 @@ const Chatbot = () => {
 
       setFormStatus("Thank you for contacting us! We'll respond soon.");
       setFormData({
+        college: "SCEP-ChatBot",
         name: "",
         email: "",
         phone: "",
@@ -259,16 +311,25 @@ const Chatbot = () => {
                 <FiMessageSquare className="text-white" />
               </div>
               <div>
-                <h3 className="font-bold">LIP Assistant</h3>
+                <h3 className="font-bold">SCEP Assistant</h3>
                 <p className="text-xs opacity-80">Online</p>
               </div>
             </div>
-            <button
-              onClick={toggleChatbot}
-              className="text-white hover:text-blue-200 transition-colors"
-            >
-              <FiX className="w-5 h-5" />
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={resetChat}
+                className="text-white hover:text-blue-200 transition-colors p-1"
+                title="Reset chat"
+              >
+                <FiRefreshCw className="w-4 h-4" />
+              </button>
+              <button
+                onClick={toggleChatbot}
+                className="text-white hover:text-blue-200 transition-colors p-1"
+              >
+                <FiX className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
@@ -310,7 +371,7 @@ const Chatbot = () => {
             {showContactForm && (
               <div className="mt-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-3">
-                  Contact Form
+                  Fill the Form
                 </h4>
                 <form onSubmit={handleFormSubmit} className="space-y-3">
                   <input
