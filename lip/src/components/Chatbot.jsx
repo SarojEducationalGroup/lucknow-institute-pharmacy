@@ -5,12 +5,11 @@ import { Loader2 } from "lucide-react";
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
-  const [hasFirstOptionBeenSelected, setHasFirstOptionBeenSelected] =
-    useState(false);
+  const [hasFirstOptionBeenSelected, setHasFirstOptionBeenSelected] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm your virtual assistant for Saroj College of Engineering and Polytechnic",
+      text: "Hi! I'm your virtual assistant for Lucknow Institute of Pharmacy.",
       sender: "bot",
       time: getCurrentTime(),
       options: null,
@@ -21,7 +20,7 @@ const Chatbot = () => {
       sender: "bot",
       time: getCurrentTime(),
       options: [
-        "Academic programs information",
+        "Pharmacy programs information",
         "Admission process",
         "Campus facilities",
         "Placement details",
@@ -31,7 +30,7 @@ const Chatbot = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [formData, setFormData] = useState({
-    college: "SCEP-ChatBot",
+    college: "LIP-ChatBot",
     name: "",
     email: "",
     phone: "",
@@ -64,7 +63,7 @@ const Chatbot = () => {
     setMessages([
       {
         id: 1,
-        text: "Hi! I'm your virtual assistant for Saroj College of Engineering and Polytechnic",
+        text: "Hi! I'm your virtual assistant for Lucknow Institute of Pharmacy.",
         sender: "bot",
         time: getCurrentTime(),
         options: null,
@@ -75,7 +74,7 @@ const Chatbot = () => {
         sender: "bot",
         time: getCurrentTime(),
         options: [
-          "Academic programs information",
+          "Pharmacy programs information",
           "Admission process",
           "Campus facilities",
           "Placement details",
@@ -153,65 +152,55 @@ const Chatbot = () => {
   const generateBotResponse = (userInput) => {
     let response;
     let options = null;
+    const input = userInput.toLowerCase();
 
-    if (userInput.toLowerCase().includes("program")) {
+    if (input.includes("program")) {
       response =
-        "We offer the following engineering and polytechnic courses:\n\n• B.Tech (Computer Science, Mechanical, Civil, Electrical)\n• Diploma in Engineering (Various Specializations)\n• Polytechnic courses";
+        "We offer the following pharmacy programs:\n\n• B.Pharm (Bachelor of Pharmacy)\n• D.Pharm (Diploma in Pharmacy)\n)";
       options = [
-        "B.Tech details",
-        "Diploma details",
-        "Polytechnic details",
+        "B.Pharm details",
+        "D.Pharm details",
         "Contact administration",
       ];
-    } else if (userInput.toLowerCase().includes("admission")) {
-      response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application\n\nFor engineering programs, JEE Main scores are considered.`;
-    } else if (userInput.toLowerCase().includes("facility")) {
+    } else if (input.includes("admission")) {
+      response = `Admission Process:
+1. Apply online through our official website.
+2. Submit necessary documents.
+3. Entrance exam/interview (if applicable).
+4. Fee payment and confirmation.
+
+For detailed eligibility and dates, please visit our admissions page or contact us.`;
+    } else if (input.includes("facility")) {
       response =
-        "Our campus includes:\n- Modern labs and workshops\n- Computer centers\n- Library with digital resources\n- Hostel facilities\n- Sports complex\n- Transportation services";
+        "Our campus facilities include:\n- Well-equipped pharmacy labs\n- Digital library with pharmaceutical journals\n- Seminar halls\n- Hostel accommodations\n- Sports facilities\n- Cafeteria";
       options = [
         "Lab details",
         "Library info",
         "Hostel info",
         "Sports facilities",
-        "Transportation",
         "Contact administration",
       ];
-    } else if (userInput.toLowerCase().includes("placement")) {
-      response = `Our Placement Highlights:
-- Strong industry connections with tech companies
-- Regular campus recruitment drives
-- Dedicated placement cell for training and opportunities
-- Alumni network in top engineering firms
-  
-Recent recruiters include TCS, Wipro, L&T, and other leading engineering companies.`;
+    } else if (input.includes("placement")) {
+      response = `Placement Highlights:
+- Dedicated placement cell for pharmacy students
+- Internship opportunities with top pharmaceutical companies
+- Campus recruitment drives with industry leaders
+- Alumni network in pharma sector
+
+Recent recruiters: Cipla, Sun Pharma, Dr. Reddy's, Lupin Ltd.`;
       options = ["Contact administration"];
-    } else if (userInput.toLowerCase().includes("b.tech")) {
-      response = `B.Tech Programs (4 years):
-- Computer Science & Engineering
-- Mechanical Engineering
-- Civil Engineering
-- Electrical Engineering
-  
-Eligibility: 10+2 with Physics, Chemistry, and Mathematics`;
-    } else if (userInput.toLowerCase().includes("diploma")) {
-      response = `Diploma in Engineering (3 years):
-- Mechanical Engineering
-- Civil Engineering
-- Electrical Engineering
-- Electronics Engineering
-  
-Eligibility: 10th pass with Science and Mathematics`;
-    } else if (userInput.toLowerCase().includes("polytechnic")) {
-      response = `Polytechnic Courses:
-- Advanced technical training programs
-- Short-term skill development courses
-- Industry-oriented curriculum
-  
-Duration: 6 months to 2 years`;
+    } else if (input.includes("b.pharm")) {
+      response = `B.Pharm Program (4 years):
+- Core subjects: Pharmacology, Pharmaceutics, Pharmaceutical Chemistry, Pharmacognosy
+- Eligibility: 10+2 with Physics, Chemistry, Biology/Mathematics`;
+    } else if (input.includes("d.pharm")) {
+      response = `D.Pharm Program (2 years):
+- Focus on basic pharmacy practice and pharmaceutical sciences
+- Eligibility: 10+2 with Physics and Chemistry`;
     } else {
-      response = "I'm here to assist you with any queries about our engineering and polytechnic programs.";
+      response = "I'm here to assist you with any queries about Lucknow Institute of Pharmacy.";
       options = [
-        "Academic programs information",
+        "Pharmacy programs information",
         "Admission process",
         "Campus facilities",
         "Placement details",
@@ -249,7 +238,7 @@ Duration: 6 months to 2 years`;
 
       setFormStatus("Thank you for contacting us! We'll respond soon.");
       setFormData({
-        college: "SCEP-ChatBot",
+        college: "LIP-ChatBot",
         name: "",
         email: "",
         phone: "",
@@ -275,7 +264,7 @@ Duration: 6 months to 2 years`;
           sender: "bot",
           time: getCurrentTime(),
           options: [
-            "Academic programs information",
+            "Pharmacy programs information",
             "Admission process",
             "Campus facilities",
             "Placement details",
@@ -311,7 +300,7 @@ Duration: 6 months to 2 years`;
                 <FiMessageSquare className="text-white" />
               </div>
               <div>
-                <h3 className="font-bold">SCEP Assistant</h3>
+                <h3 className="font-bold">LIP Assistant</h3>
                 <p className="text-xs opacity-80">Online</p>
               </div>
             </div>
